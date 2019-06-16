@@ -8,17 +8,20 @@ package actores;
 /**
  *
  * @author santi
- */
+ */ 
 public class Regadera {
     private boolean activado = false;
     public void activar(boolean v){
         if (v) {
-            activado=true;
-            System.out.println("La regadera se a activado.");
+            if(!activado){
+                activado=true;
+                System.out.println("La regadera se ha activado."); 
+            }
+            
         }
         else if(activado){
             activado=false;
-            System.out.println("La regadera se a desactivado.");
+            System.out.println("La regadera se ha desactivado.");
         }
     }
 }

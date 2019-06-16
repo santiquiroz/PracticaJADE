@@ -19,7 +19,7 @@ public class AgenteAutomatizador extends Agent {
     
     protected void setup() {
         
-        this.regadera = new Regadera();
+        
         String argumentos;
         Object[] args = getArguments();
         argumentos =args[0].toString();
@@ -33,7 +33,8 @@ public class AgenteAutomatizador extends Agent {
             System.out.println("terminando agente");   
             doDelete();
         }
-        if(argumentos.equals("ejecutar")){
+        if(argumentos.equals("dispositivo regadora")){
+            this.regadera = new Regadera();
             TimerConsultaDatos= new Timer();
             TaskConsultarDatos = new TimerTask(){
             public void run(){
@@ -47,18 +48,7 @@ public class AgenteAutomatizador extends Agent {
         }
         
         
-        //se define una tarea en segundo plano para la automatizacion  
-        TimerConsultaDatos= new Timer();
-        TaskConsultarDatos = new TimerTask(){
-        public void run(){
-            
-            consultarDatos();
-              
-        }
-        };
-        //se ejecuta la tarea en segundo plano para la automatizacion.
-        TimerConsultaDatos.scheduleAtFixedRate(TaskConsultarDatos,1000,8000);
-        
+       
         //Mensaje de inicializado
         System.out.println("El agente: " + getAID().getName() + " esta listo.");
     }
@@ -99,10 +89,10 @@ public class AgenteAutomatizador extends Agent {
               }
               
               if((radiacionSolar>55)&&(cantidadAgua<10)){
-                  this.regadera.activar(true);
+                  regadera.activar(true);
               }
               else{
-                  this.regadera.activar(false);
+                  regadera.activar(false);
               }
               
            }catch (Exception e2){ 

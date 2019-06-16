@@ -1,2 +1,2 @@
-cantidad de agua=19
-cantidad de radiacion solar=1
+cantidad de agua=5
+cantidad de radiacion solar=1000
