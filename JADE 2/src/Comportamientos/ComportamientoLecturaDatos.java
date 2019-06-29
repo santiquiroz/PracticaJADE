@@ -1,28 +1,16 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Comportamientos;
+
 import jade.core.Agent;
-import jade.core.behaviours.*;
+import jade.core.behaviours.TickerBehaviour;
+
+public class ComportamientoLecturaDatos extends TickerBehaviour{
  
-public class agenteTicker extends Agent{
+        long tini;
+        int minticks =0 ;
  
-    long tini;
-    int minticks = 0;
- 
-    protected void setup(){
-        tini = System.currentTimeMillis();
-        addBehaviour(new miTicker(this, 3000));
-    }
- 
-    private class miTicker extends TickerBehaviour{
- 
-        
- 
-        public miTicker(Agent a, long intervalo){
+        public ComportamientoLecturaDatos(Agent a, long intervalo){
             super(a, intervalo);
-            
+            tini = System.currentTimeMillis();
         }
  
         public void reset () {
@@ -43,4 +31,3 @@ public class agenteTicker extends Agent{
             }
         }
     }
-}
