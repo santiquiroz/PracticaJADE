@@ -1,6 +1,7 @@
 package agentes;
 
 
+import Comportamientos.ComportamientoFacilitador;
 import jade.core.Agent;
 import static java.lang.Thread.sleep;
 import java.util.logging.Level;
@@ -20,18 +21,10 @@ public class AgenteFacilitador extends Agent {
             System.out.println("terminando agente");   
             doDelete();
         }
+        addBehaviour(new ComportamientoFacilitador(this,4000) );
+
         if (argumentos.equals("entregar")){
-            System.out.println("Entregando datos");
-            destinatario = args[1].toString();
-            if (destinatario.equals("Organizacion")) {
-                System.out.println("Enviando datos a la organizacion.");
-            }
-            else if (destinatario.equals("Usuario")) {
-                System.out.println("Enviando datos al usuario.");
-            }
-            else{
-                System.out.println("Hay un error!.");
-            }
+            
         }
        
     }

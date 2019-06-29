@@ -28,7 +28,7 @@ public class ComportamientoAutomatizacion extends TickerBehaviour{
             try {
                 // Apertura del fichero y creacion de BufferedReader para poder
                 // hacer una lectura comoda (disponer del metodo readLine()).
-                archivo = new File ("base.txt");
+                archivo = new File ("DataBases/DATOSPROS.txt");
                 fr = new FileReader (archivo);
                 br = new BufferedReader(fr);
 
