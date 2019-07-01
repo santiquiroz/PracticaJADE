@@ -1,5 +1,7 @@
 package agentes;
 
+
+import Comportamientos.ComportamientoReceptor;
 import jade.core.Agent;
 
 public class AgenteReceptorDeDatos extends Agent {
@@ -12,10 +14,11 @@ public class AgenteReceptorDeDatos extends Agent {
             System.out.println("terminando agente");   
             doDelete();
         }
-        System.out.println("Los argumentos son los siguientes: \n");
+        System.out.println("Los argumentos del agente receptor son los siguientes: \n");
         for (int i = 0; i < args.length; i++) {
             System.out.println(args[i].toString());
         }
+        addBehaviour(new ComportamientoReceptor(this,10000) );
         System.out.println("El " + getAID().getName() + " esta ejecutandose.");
     }
 }

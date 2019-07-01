@@ -1,5 +1,6 @@
 package agentes;
 
+import Comportamientos.ComportamientoRecomendador;
 import jade.core.Agent;
 import static java.lang.Thread.sleep;
 import java.util.logging.Level;
@@ -24,6 +25,7 @@ public class AgenteRecomendador extends Agent {
         for (int i = 0; i < args.length; i++) {
             System.out.println(args[i].toString());
         }
+        this.addBehaviour(new ComportamientoRecomendador(this,500000000));
         System.out.println("El " + getAID().getName() + " esta ejecutandose.");
     }
 }

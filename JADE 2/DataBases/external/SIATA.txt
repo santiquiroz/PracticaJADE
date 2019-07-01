@@ -1,0 +1,2 @@
+cantidad de agua=5
+cantidad de radiacion solar=100000

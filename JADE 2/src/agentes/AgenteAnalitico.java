@@ -1,11 +1,10 @@
 package agentes;
 
+import Comportamientos.ComportamientoAnalitico;
 import jade.core.Agent;
-import Comportamientos.ComportamientoNormie;
-import Comportamientos.ComportamientoTicker;
-import Comportamientos.ComportamientoWaker;
 
 public class AgenteAnalitico extends Agent {
+    
     protected void setup() {
         String argumentos;
         Object[] args = getArguments();
@@ -15,9 +14,8 @@ public class AgenteAnalitico extends Agent {
             System.out.println("terminando agente");   
             doDelete();
         }
-        addBehaviour(new ComportamientoNormie() );
-        addBehaviour(new ComportamientoWaker(this,5000) );
-        addBehaviour(new ComportamientoTicker(this,5000) );
+        
+        addBehaviour(new ComportamientoAnalitico(this,5000) );
         System.out.println("El " + getAID().getName() + " esta ejecutandose.");
     }
 }
